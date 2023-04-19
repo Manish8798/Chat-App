@@ -9,7 +9,6 @@ function App(): JSX.Element {
   const CHATGPT_ENDPOINT =
     'https://api.openai.com/v1/engines/davinci/completions';
 
-  // org-VHRBTMhL1qgVA5hrkJlvFQ9t
 
   const [messages, setMessages] = useState([]);
   const [text, setText] = useState('');
