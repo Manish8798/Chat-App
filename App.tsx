@@ -83,7 +83,7 @@ function App(): JSX.Element {
     <SafeAreaView style={styles.container}>
       {showYourText()}
       <GiftedChat
-        messagesContainerStyle={{backgroundColor: '#fff'}}
+        messagesContainerStyle={styles.chatContainer}
         messages={messages}
         onSend={handleSend}
         user={{
@@ -105,6 +105,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'fff',
   },
   txt: {alignSelf: 'flex-end', padding: 10},
+  chatContainer: {
+    backgroundColor: '#fff',
+    borderBottomColor: '#D3D3D3',
+    borderBottomWidth: 1,
+  },
 });
 
 export default App;
