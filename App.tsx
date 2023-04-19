@@ -9,7 +9,6 @@ function App(): JSX.Element {
   const CHATGPT_ENDPOINT =
     'https://api.openai.com/v1/engines/davinci/completions';
 
-
   const [messages, setMessages] = useState([]);
   const [text, setText] = useState('');
   const [showText, setShowText] = useState(false);
@@ -73,15 +72,15 @@ function App(): JSX.Element {
   const showYourText = () => {
     return (
       showText && (
-        <View style={{borderBottomColor: '#EAEBE8', borderBottomWidth: 0.5}}>
-          <Text style={{alignSelf: 'flex-end', padding: 10}}>{text}</Text>
+        <View style={styles.txtView}>
+          <Text style={styles.txt}>{text}</Text>
         </View>
       )
     );
   };
 
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={styles.container}>
       {showYourText()}
       <GiftedChat
         // messagesContainerStyle={{backgroundColor: '#EAEBE8'}}
@@ -97,22 +96,11 @@ function App(): JSX.Element {
 }
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  container: {
+    flex: 1,
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
+  txtView: {borderBottomColor: '#EAEBE8', borderBottomWidth: 0.5},
+  txt: {alignSelf: 'flex-end', padding: 10},
 });
 
 export default App;
